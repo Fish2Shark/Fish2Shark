@@ -16,6 +16,14 @@ public class Card {
         else if (this.value == card1.value) return 0;
         else return -1;
     }
+
+    public int getValue() {
+        return value;
+    }
+
+    public String getColor() {
+        return color;
+    }
     //Method that compare the color of 2 cards
     public int compareColorTO(Card card1) {
         return this.color.compareTo(card1.color);

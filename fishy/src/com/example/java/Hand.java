@@ -9,6 +9,14 @@ public class Hand {
         this.card1 = card1;
         this.card2 = card2;
     }
+
+    public Card getCard1() {
+        return card1;
+    }
+
+    public Card getCard2() {
+        return card2;
+    }
     //Count and tell if the hand is suited
     /*public boolean isSuit(Card card1, Card card2){
         if(card1.compareValueTo(card2)!=0) {

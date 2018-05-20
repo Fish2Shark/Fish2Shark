@@ -51,6 +51,14 @@ public class BoardEvaluate {
     }
 
     public boolean AbetweenT(Flop flop){
+        if(flop.card1.value == 1)
+            flop.card1.value = 14;
+        if(flop.card2.value == 1)
+            flop.card2.value = 14;
+        if(flop.card3.value == 1)
+            flop.card3.value = 14;
+
+
         if (flop.card1.value >= 10 && flop.card2.value < 10 && flop.card3.value < 10) {
             return true;
         } else if (flop.card2.value >= 10 && flop.card1.value < 10 && flop.card3.value < 10) {
@@ -59,6 +67,7 @@ public class BoardEvaluate {
             return true;
         } else return false;
     }
+
     public int FlushDraw(Flop flop){
         if(flop.card1.compareColorTO( flop.card2 ) == 0 && flop.card2.compareColorTO( flop.card3 )==0){
             return treeSuits++;
@@ -66,17 +75,17 @@ public class BoardEvaluate {
         else if(flop.card1.compareColorTO( flop.card2 ) == 0 && flop.card1.compareColorTO( flop.card3 )!=0 ){
             return twoSuits++;
         }
+        return 1;
     }
 
     public boolean isDry(Flop flop) {
-        if(twoSuits==1 && TwoGap( flop )==true){
+        /*if(twoSuits==1 && TwoGap( flop )==true){
             return true;
-        }
-        //if(AbetweenT(flop)==true && )
+        }*/
         if (isRainbow( flop ) == true) {
             System.out.println("dry");
             return true;
-        } else if (TreeGap( flop ) == true) {
+        } else if (TreeGap( flop ) == true && twoSuits==1) {
             System.out.println("dry");
             return true;
         } else if (isPairedBoard( flop ) == true) {
@@ -85,4 +94,22 @@ public class BoardEvaluate {
         } else return false;
 
     }
+
+    public boolean isSemiConnected(Flop flop) {
+        if(TwoGap( flop ) && AbetweenT( flop ))
+            return true;
+        else if(TwoGap( flop ) && twoSuits==1)
+            return true;
+        else return false;
+    }
+
+    public boolean isConnected(Flop flop){
+        if(treeSuits==1)
+            return true;
+        else if(AbetweenT( flop )&& twoSuits==1)
+            return true;
+        else return false;
+
+    }
+
 }
