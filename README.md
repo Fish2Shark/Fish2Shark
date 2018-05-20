@@ -5,3 +5,5 @@ Nous travaillons maintenant sur le dossier fishy et sur la fusion des deux trava
 
 Dans cette version pré finale, nous avons réuni la partie graphique ainsi que l'évaluation des mains (Strong, medium, weak). 
 Il manque la finition ou il faut juste appliquer la formule de meilleur mise, et résoudre des bugs si il y en a.
+
+NB : Ne pas faire attention au dossier Fish2Shark qui est erroné. Le fichier a regarder est Fish2Shark/fishy/src/com/example/java/ pour les fichiers java
